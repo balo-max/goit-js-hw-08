@@ -94,7 +94,7 @@ imgListGallery.addEventListener('click', (event) => {
   }
 
   const imgModalWindow = basicLightbox.create(`
-    <img class="gallery-modal-image" src="${event.target.dataset.source}" alt="${event.target.alt}" width="800" height="600"/>
+    <img class="gallery-modal-image" src="${event.target.dataset.source}" alt="${event.target.alt}" width="1112" height="640"/>
     <p class="text-description">${event.target.alt}</p>
 `)
 
