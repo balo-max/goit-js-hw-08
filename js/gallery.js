@@ -87,6 +87,17 @@ const imgListGallery = document.querySelector('.gallery');
 imgListGallery.innerHTML = imgCardTemplate;
 
 imgListGallery.addEventListener('click', (event) => {
-    event.preventDefault();
-    console.dir(event.target.dataset.source);
+  event.preventDefault();
+  
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
+
+  const imgModalWindow = basicLightbox.create(`
+    <img class="gallery-modal-image" src="${event.target.dataset.source}" alt="${event.target.alt}" width="800" height="600"/>
+    <p class="text-description">${event.target.alt}</p>
+`)
+
+  imgModalWindow.show();
 })
+
